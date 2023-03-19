@@ -38,7 +38,6 @@ func createBlock(data string) *block {
 	return &newBlock
 }
 
-// Export
 func (b *blockchain) AddBlock(data string) {
 	b.blocks = append(b.blocks, createBlock(data))
 }
@@ -54,13 +53,6 @@ func GetBlockchain() *blockchain {
 
 }
 
-// Main에서 부르는 형식
-//
-//	func AllBlocks() []*block {
-//		return GetBlockchain().blocks
-//	}
-//
-// Main에서 GetBlockchain을 실행 후 사용할 함수
 func (b *blockchain) AllBlocks() []*block {
 	return b.blocks
 }
