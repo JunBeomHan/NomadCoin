@@ -29,3 +29,19 @@ type blockchain struct {
 	blocks []block
 }
 
+var b *blockchain 	// blockchain 패키지 내부에서만 이 변수에 접근가능하다.
+/*
+	Singleton의 의미는, 이 변수의 instance를 직접 공유하지 않고, 그 대신, 이 변수의 instance를 우릴 대신해서 드러내주는 Function을 생성하는 것이다.
+	function을 생성하는 만큼, 다른 패키지에서 우리의 blockchain이 어떻게 드러날 지를 제어할 수 있다는 의미이기도 하다.
+*/
+
+func GetBlockchain()*blockchain {
+	if b == nil {	// nil인지 아닌지 판단하여, blockchain인의 초기화를 한번만 하게 할 수 있다.(왜냐하면 닐일 경우 , 대입을 해주기때문에 더 이상 닐이 아니기 때문이다.)
+		b = &blockchain{}
+		// blockchain이 어떻게 생성될 지 제어할 수 있다. 
+		// 만약 초기화 단계에서 blockchain을 database에서 가져올 수 있다는 의미이다!(와 그래서 사용하는 거구나)
+		 
+	}
+	return b	// 이 시점에세 blockchain이 이미 초기화 된 걸 알고 있음
+}
+

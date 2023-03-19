@@ -1,13 +1,13 @@
 package main
 
 import (
-	"crypto/sha256"
-	"fmt"
+	"NomadCoin/blockchain"
+	
 )
 
 
 
 
 func main() {
-
+	chain := blockchain.GetBlockChain
 }
