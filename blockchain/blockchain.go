@@ -43,5 +43,14 @@ func GetBlockchain()*blockchain {
 		 
 	}
 	return b	// 이 시점에세 blockchain이 이미 초기화 된 걸 알고 있음
+	/*
+	그리고 이것이 싱글톤 패턴이다. Single Singly Singleton 패턴이다.	
+	*/
 }
 
+/*
+
+싱글톤 패턴 좀더 찾아본 내용
+
+
+*/
