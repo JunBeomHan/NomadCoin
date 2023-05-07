@@ -11,12 +11,12 @@ const PORT string = ":4000"
 
 type homeData struct {
 	PageTitle string
-	Blocks    *[]blockchain.Block
+	Blocks    []*blockchain.Block
 }
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	teml := template.Must(template.ParseFiles("templates/home.html"))
-	data := homeData{"HOME", blockchain.GetBlockchain().AddBlock()}
+	teml := template.Must(template.ParseFiles("templates/home.gohtml"))
+	data := homeData{"HOME", blockchain.GetBlockchain().AllBlocks()}
 	teml.Execute(rw, data)
 
 }
